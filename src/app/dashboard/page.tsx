@@ -184,7 +184,7 @@ export default function DashboardPage() {
     const input = taskStatement.toLowerCase();
 
     try {
-      const res = await fetch("http://localhost:5000/api/tasks/parse", {
+      const res = await fetch("/api/tasks/parse", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ statement: taskStatement })
@@ -255,7 +255,7 @@ export default function DashboardPage() {
     setCoachLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/coach/motivate", {
+      const res = await fetch("/api/coach/motivate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tasks, risk, message: userMsg })

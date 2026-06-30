@@ -276,7 +276,7 @@ export function useDeadlineGuardian() {
   // Recalculate Risk
   const recalculateRisk = async (activeTasks: Task[], activeSchedule: TimeBlock[]) => {
     try {
-      const response = await fetch("http://localhost:5000/api/risk/analyze", {
+      const response = await fetch("/api/risk/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -379,7 +379,7 @@ export function useDeadlineGuardian() {
   // Trigger reschedule via AI Agent
   const triggerReschedule = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/schedule/generate", {
+      const response = await fetch("/api/schedule/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
